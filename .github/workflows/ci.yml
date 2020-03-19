@@ -40,13 +40,24 @@ jobs:
     #       whoami
     #       ls -al
 
-    - name: test scp command
-      uses: AEnterprise/rsync-deploy@v1.0
-      env:
-        DEPLOY_KEY: ${{ secrets.github_private_key }}
-        ARGS: "-e -c -r --delete"
-        SERVER_PORT: ${{ secrets.ghost_port }}
-        FOLDER: "./"
-        SERVER_IP: ${{ secrets.ghost_host }}
-        USERNAME: ${{ secrets.ghost_user }}
-        SERVER_DESTINATION: "/tmp"
+    # - name: test scp command
+    #   uses: AEnterprise/rsync-deploy@v1.0
+    #   env:
+    #     DEPLOY_KEY: ${{ secrets.github_private_key }}
+    #     ARGS: "-e -c -r --delete"
+    #     SERVER_PORT: ${{ secrets.ghost_port }}
+    #     FOLDER: ""
+    #     SERVER_IP: ${{ secrets.ghost_host }}
+    #     USERNAME: ${{ secrets.ghost_user }}
+    #     SERVER_DESTINATION: "/tmp"
+
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@4.0
+      with:
+        switches: -avzr --delete
+        path: /
+        remote_path: /tmp/
+        remote_host: ${{ secrets.ghost_host }}
+        remote_port: ${{ secrets.ghost_port }}
+        remote_user: ${{ secrets.ghost_user }}
+        remote_key: ${{ secrets.github_private_key }}
