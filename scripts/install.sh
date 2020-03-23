@@ -21,5 +21,6 @@ function terraform-install() {
   /usr/local/bin/terraform version
 }
 
+check_exist
 terraform-install
 
