@@ -25,7 +25,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        sudo bash scripts/install.sh
+        sudo bash -x scripts/install.sh
     
     # Runs a set of commands using the ssh
     # - name: test ssh command
