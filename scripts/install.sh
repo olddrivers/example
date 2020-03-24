@@ -5,9 +5,8 @@ version="0.12.24"
 #LATEST_VERSION=$(curl -sL https://releases.hashicorp.com/terraform/index.json | jq -r '.versions[].version' | sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n | egrep -v 'alpha|beta|rc' | tail -1)
 
 function  check_exist(){
-  if [ ! $(/usr/local/bin/terraform version | grep ${version}) ] -a [ -f /usr/local/bin/terraform ]; then
-      rm -rf /usr/local/bin/terraform
-  fi
+  #if [  /usr/local/bin/terraform version | grep ${version} ] &&  [ -f /usr/local/bin/terraform ]; then
+   /usr/local/bin/terraform version | grep ${version} && exit 0 || [[ -f /usr/local/bin/terraform ]] && rm -rf /usr/local/bin/terraform
 }
 
 
