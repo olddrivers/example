@@ -5,8 +5,7 @@ version="0.12.24"
 #LATEST_VERSION=$(curl -sL https://releases.hashicorp.com/terraform/index.json | jq -r '.versions[].version' | sort -t. -k 1,1n -k 2,2n -k 3,3n -k 4,4n | egrep -v 'alpha|beta|rc' | tail -1)
 
 function  check_exist(){
-	$(which terraform) version | grep -q "${version}" && exit 0
-    [[ -f /usr/local/bin/terraform ]] && rm -rf $(which terraform)
+	$(which terraform) version | grep -wq "v${version}" && exit 0 || rm -f $(which terraform)
 }
 
 
