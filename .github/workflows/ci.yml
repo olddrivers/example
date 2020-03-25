@@ -10,6 +10,10 @@ on:
     # paths:
     #   - 'conf/**'
 
+  pull_request_review:
+    # branches: 
+    #   - master
+
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
   push:
@@ -29,22 +33,26 @@ jobs:
     - name: Run check 
       run: |
           echo "check"
+          sudo bash scripts/test.sh -a plan -p test
+          sudo wget --quiet https://github.com/mozilla/sops/releases/download/v3.5.0/sops-v3.5.0.linux -O /bin/sops
+          sudo chmod +x /bin/sops
 
-    - name: Send dingding notify
-      uses: zcong1993/actions-ding@master
-      with:
-        dingToken: "e72095b4ecb310883bb683e4ba8492f6d2e3e308fd78f9f72ab37a590035b2cd"
-        body: |
-          {
-            "msgtype": "markdown",
-            "markdown": {
-                "text": "测试钉钉消息",
-                "title": "消息需要包含 pump"
-            }
-          }
+    # - name: Send dingding notify
+    #   uses: zcong1993/actions-ding@master
+    #   with:
+    #     dingToken: "e72095b4ecb310883bb683e4ba8492f6d2e3e308fd78f9f72ab37a590035b2cd"
+    #     body: |
+    #       {
+    #         "msgtype": "markdown",
+    #         "markdown": {
+    #             "text": "测试钉钉消息",
+    #             "title": "消息需要包含 pump"
+    #         }
+    #       }
   # This workflow contains a single job called "build"
   merge-branch:
     if: github.event_name == 'push'
+    # if: github.ref == 'refs/heads/master'
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
 
@@ -56,6 +64,9 @@ jobs:
     - name: Run push
       run: |
           echo "push"
+          sudo bash scripts/test.sh -a apply -p test
+          sudo wget --quiet https://github.com/mozilla/sops/releases/download/v3.5.0/sops-v3.5.0.linux -O /bin/sops
+          sudo chmod +x /bin/sops
 
     # Runs a set of commands using the runners shell
     # - name: Run a multi-line script
