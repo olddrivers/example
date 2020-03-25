@@ -7,16 +7,16 @@ on:
   pull_request:
     branches: 
       - master
-    paths:
-      - 'conf/**'
+    # paths:
+    #   - 'conf/**'
 
 # Controls when the action will run. Triggers the workflow on push or pull request 
 # events but only for the master branch
   push:
     branches: 
       - master
-    paths:
-      - 'conf/**'
+    # paths:
+    #   - 'conf/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,6 +29,19 @@ jobs:
     - name: Run check 
       run: |
           echo "check"
+
+    - name: Send dingding notify
+      uses: zcong1993/actions-ding@master
+      with:
+        dingToken: "e72095b4ecb310883bb683e4ba8492f6d2e3e308fd78f9f72ab37a590035b2cd"
+        body: |
+          {
+            "msgtype": "markdown",
+            "markdown": {
+                "text": "测试钉钉消息",
+                "title": "消息需要包含 pump"
+            }
+          }
   # This workflow contains a single job called "build"
   merge-branch:
     if: github.event_name == 'push'
