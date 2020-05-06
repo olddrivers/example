@@ -1,27 +1,5 @@
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
-  agentProtocols:
-  - "JNLP4-connect"
-  - "Ping"
-  authorizationStrategy:
-    loggedInUsersCanDoAnything:
-      allowAnonymousRead: false
-  crumbIssuer:
-    standard:
-      excludeClientIPFromCrumb: false
-  disableRememberMe: false
-  markupFormatter: "plainText"
-  mode: NORMAL
-  myViewsTabBar: "standard"
-  numExecutors: 2
-  primaryView:
-    all:
-      name: "all"
-  projectNamingStrategy: "standard"
-  quietPeriod: 5
-  remotingSecurity:
-    enabled: true
-  scmCheckoutRetryCount: 0
   securityRealm:
     local:
       allowsSignup: false
@@ -29,7 +7,7 @@ jenkins:
       users:
       - id: "root"
         name: "root"
-        password: "root"
+        password: "root@example.org"
         properties:
         - "apiToken"
         - "userCommunityProperty"
@@ -37,15 +15,6 @@ jenkins:
             emailAddress: "root@example.org"
         - preferredProvider:
             providerId: "default"
-  slaveAgentPort: 50000
-  updateCenter:
-    sites:
-    - id: "default"
-      url: "https://updates.jenkins.io/update-center.json"
-  views:
-  - all:
-      name: "all"
-  viewsTabBar: "standard"
 unclassified:
   casCGlobalConfig:
     configurationPath: "https://raw.githubusercontent.com/olddrivers/example/master/jenkins.yaml"
