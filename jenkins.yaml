@@ -1,2 +1,6 @@
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+
+unclassified:
+  casCGlobalConfig:
+    configurationPath: "https://raw.githubusercontent.com/olddrivers/example/master/jenkins.yaml"
