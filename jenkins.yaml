@@ -1,5 +1,13 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - gitHubApp:
+          apiUri: "https://api.github.com"
+          appID: "64151"
+          id: "github-app-olddrivers"
+          privateKey: "{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}"
 jenkins:
-  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
@@ -38,6 +46,8 @@ jenkins:
         - preferredProvider:
             providerId: "default"
   slaveAgentPort: 50000
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code\
+    \ plugin\r\n\r\n"
   updateCenter:
     sites:
     - id: "default"
@@ -46,6 +56,60 @@ jenkins:
   - all:
       name: "all"
   viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
 unclassified:
-  casCGlobalConfig:
-    configurationPath: "https://raw.githubusercontent.com/olddrivers/example/master/jenkins.yaml"
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://10.140.0.16:8080/github-webhook/"
+  gitSCM:
+    createAccountBasedOnEmail: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  location:
+    adminAddress: "没有配置邮箱地址 <nobody@nowhere>"
+    url: "http://10.140.0.16:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  timestamperConfig:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
