@@ -90,14 +90,14 @@ unclassified:
   gitHubConfiguration:
     apiRateLimitChecker: ThrottleForNormalize
   gitHubPluginConfig:
-    hookUrl: "http://10.140.0.16:8080/github-webhook/"
+    hookUrl: "http://10.140.0.149:8080/github-webhook/"
   gitSCM:
     createAccountBasedOnEmail: false
     showEntireCommitSummaryInChanges: false
     useExistingAccountWithSameEmail: false
   location:
     adminAddress: "没有配置邮箱地址 <nobody@nowhere>"
-    url: "http://10.140.0.16:8080/"
+    url: "http://10.140.0.149:8080/"
   mailer:
     charset: "UTF-8"
     useSsl: false
